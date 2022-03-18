@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from poll.models import Questionary, RestaurantsList
+from poll.models import Menu, RestaurantList
 
-admin.site.register(Questionary)
-admin.site.register(RestaurantsList)
+admin.site.register(Menu)
+admin.site.register(RestaurantList)

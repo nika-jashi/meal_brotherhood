@@ -6,8 +6,8 @@
     <br>
     <form action="{% url 'poll2' %}" method="POST">
         {% csrf_token %}
-        {% for restaurant in restaurants %}
-            <input class="btn btn-secondary" type="submit" name="chosen" value="{{ restaurant.restaurant_name }}">
+        {% for res in restaurant %}
+            <input class="btn btn-secondary" type="submit" name="chosen" value="{{ res.restaurant_name }}">
         {% endfor %}
     </form>
     </body>

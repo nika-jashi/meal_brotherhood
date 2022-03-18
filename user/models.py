@@ -2,12 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 
-from poll.models import RestaurantsList, Questionary
+from poll.models import RestaurantList, Menu
 
 
 class Profile(models.Model):
-    going_out = models.ForeignKey(Questionary, default=0, on_delete=models.SET_NULL)
-    res = models.ForeignKey(RestaurantsList, max_length=30, on_delete=models.SET_NULL)
+    menu = models.ForeignKey(Menu, null=True, on_delete=models.SET_NULL)
+    res = models.ForeignKey(RestaurantList, max_length=30, null=True, blank=True, on_delete=models.SET_NULL)
+    going_out_or_not = models.BooleanField(default=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default_pic.png',
                               upload_to='profile_pics')
