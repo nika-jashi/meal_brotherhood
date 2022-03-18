@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 {% load static %}
-<section class="sign-in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LogIn</title>
+</head>
+<br>
+<br>
+<br>
+<br>
+<section class="signin-content">
             <div class="container">
-                <div class="signin-content">
+                <div class="signup-content">
                         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-                        <link rel="stylesheet" href="/user/static/fonts/material-icon/css/material-design-iconic-font.min.css">
                     <div class="signin-image">
-{#                        <figure><img src="{% static 'images/signin-image.jpg' %}" alt="sing up image"></figure>#}
                         <a href="{% url 'register' %}" class="signup-image-link">Create an account</a>
                     </div>
                     <div class="signin-form">
