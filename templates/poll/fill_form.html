@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Write Down What You Want</h1>
+{% csrf_token %}
+    <input class="text" formmethod="post" type="text" name="box">
+</body>
+</html>
+{% endblock %}
