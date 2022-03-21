@@ -3,7 +3,7 @@
 <html lang="en">
 <body>
 <h1>Choose One</h1>
-<form method="POST" action="{% url 'poll1' %}">
+<form method="POST" action="{% url 'poll:want_to_eat' %}">
 {% csrf_token %}
     <input class="btn btn-info" id="going_out" formmethod="post" type="submit" name="Yes" value="I'm Going Out">
     <input class="btn btn-secondary" formmethod="post" type="submit" name="No" value="Staying In Office">

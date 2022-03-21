@@ -4,7 +4,7 @@
 <div>
     {% if user.is_authenticated %}
         <br>
-    <a class="btn btn-primary" href="{% url 'poll1' %}">Do You Want To Eat?</a>
+    <a class="btn btn-primary" href="{% url 'poll:want_to_eat' %}">Do You Want To Eat?</a>
     {% else %}
     {% endif %}
 </div>

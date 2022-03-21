@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <h1></h1>
+    <form method="POST" action="{% url 'poll:result' %}">
+        {% csrf_token %}
+    </form>
+    <table>
+        {% for item in query_results %}
+            <p><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" width="40" height="40" alt="profile_pic.png">
+                {{ item.user }} -> {{ item.res }} -> {{ item.menu }} -> {{ item.on_site }}</p>
+        {% endfor %}
+    </table>
+    </body>
+    </html>
+{% endblock %}

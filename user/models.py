@@ -8,7 +8,8 @@ from poll.models import RestaurantList, Menu
 class Profile(models.Model):
     menu = models.ForeignKey(Menu, null=True, on_delete=models.SET_NULL)
     res = models.ForeignKey(RestaurantList, max_length=30, null=True, blank=True, on_delete=models.SET_NULL)
-    going_out_or_not = models.BooleanField(default=False)
+    on_site = models.BooleanField(default=False)
+    who_orders = models.BooleanField(default=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default_pic.png',
                               upload_to='profile_pics')

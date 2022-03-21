@@ -4,7 +4,7 @@
     <body>
     <h1>Choose Restaurant</h1>
     <br>
-    <form action="{% url 'poll2' %}" method="POST">
+    <form action="{% url 'poll:location' %}" method="POST">
         {% csrf_token %}
         {% for res in restaurant %}
             <input class="btn btn-secondary" type="submit" name="chosen" value="{{ res.restaurant_name }}">
