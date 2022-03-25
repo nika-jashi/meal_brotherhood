@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    {% if user.is_authenticated %}
-        <br>
-    <a class="btn btn-primary" href="{% url 'poll:want_to_eat' %}">Do You Want To Eat?</a>
-    {% else %}
-    {% endif %}
-</div>
+    <div>
+        {% if user.is_authenticated %}
+            <br>
+            <a class="btn btn-outline-info" href="{% url 'poll:result' %}"> See What People Ordered</a>
+        {% else %}
+        {% endif %}
+    </div>
 {% endblock %}

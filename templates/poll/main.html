@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mx-0 mx-sm-auto">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h4 class="card-title text-center mt-3" id="title">Meal BrotherHood</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <p>
+                        <strong>Fill Form</strong>
+                    </p>
+                </div>
+                <hr/>
+                <form method="POST" class="px-4" action="">
+                {% csrf_token %}
+                    <p class="text-center"><strong>Choose One:</strong></p>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Yes" id="Yes" value="outside"/>
+                        <label class="form-check-label" for="Yes">
+                            Going Outside
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Yes" id="No" value="inside"/>
+                        <label class="form-check-label" for="No">
+                            Staying In Office
+                        </label>
+                    </div>
+                    <p class="text-center"><strong>Choose Restaurant:</strong></p>
+                    {% for res in restaurant %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="chosen"
+                                   id="{{ res.id }}" value="{{ res.restaurant_name }}" />
+                            <label class="form-check-label" for="{{ res.id }}">{{ res.restaurant_name }}</label>
+                        </div>
+                    {% endfor %}
+                    <div class="text-center">
+                        <p><strong>Menu:</strong></p>
+                    </div>
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="menu" name="text" rows="5"></textarea>
+                    </div>
+                    <p class="text-center"><strong>Orderer:</strong></p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="will_pay" value="yes"/>
+                        <label class="form-check-label" for="will_pay">I Will Pay</label>
+                    </div>
+                    <div class="text">
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="text-right" href="{% url 'dashboard' %}">I changed my mind</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

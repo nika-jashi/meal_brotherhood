@@ -11,10 +11,18 @@
         {% csrf_token %}
     </form>
     <table>
-        {% for item in query_results %}
-            <p><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" width="40" height="40" alt="profile_pic.png">
-                {{ item.user }} -> {{ item.res }} -> {{ item.menu }} -> {{ item.on_site }}</p>
-        {% endfor %}
+        <ul class="list-group">
+            {% for r, d in data.items %}
+                <li class="list-group-item mb-2">
+                    {{ r }}<span class="badge badge-success float-right">
+                    {% for o in d %}
+                        <p>{{ o.user }} | {{ o.menu }}</p>
+                    {% endfor %}
+                {{ d.count }}
+                    </span>
+                </li>
+                </ul>
+            {% endfor %}
     </table>
     </body>
     </html>

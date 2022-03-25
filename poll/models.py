@@ -14,3 +14,11 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.menu
+
+
+class Decision(models.Model):
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    res = models.ForeignKey(RestaurantList, null=True, blank=True, on_delete=models.DO_NOTHING)
+    menu = models.ForeignKey(Menu, null=True, blank=True, on_delete=models.DO_NOTHING)
+    on_site = models.BooleanField(default=0)
+    orderer = models.BooleanField(default=0)

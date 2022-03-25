@@ -120,9 +120,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '../forfood/media/profile_pics/')
+MEDIA_ROOT = os.path.join(BASE_DIR, '../meal_brotherhood/media/profile_pics/')
 
-MEDIA_URL = 'forfood/media/profile_pics/'
+MEDIA_URL = 'meal_brotherhood/media/profile_pics/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
