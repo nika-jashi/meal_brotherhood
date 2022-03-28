@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'poll.apps.PollConfig',
     'user.apps.UserConfig',
+    'receipt_posts.apps.BlogConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'

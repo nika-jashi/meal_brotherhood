@@ -11,18 +11,23 @@
         {% csrf_token %}
     </form>
     <table>
-        <ul class="list-group">
-            {% for r, d in data.items %}
-                <li class="list-group-item mb-2">
-                    {{ r }}<span class="badge badge-success float-right">
-                    {% for o in d %}
-                        <p>{{ o.user }} | {{ o.menu }}</p>
-                    {% endfor %}
-                {{ d.count }}
+        <div>
+            <ul class="list-group">
+                {% for r, d_object in data.items %}
+                    <li class="list-group-item mb-3 ">
+                        {{ r }}
+                    <div class="badge float-center">
+                        <p>People Eating Here-{{ d_object.count }}</p>
+                    </div>
+                        <span class="badge float-right">
+                        {% for o in d_object %}
+                            <p>{{ o.user }} --> {{ o.menu }}</p>
+                        {% endfor %}
                     </span>
-                </li>
-                </ul>
-            {% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </table>
     </body>
     </html>
